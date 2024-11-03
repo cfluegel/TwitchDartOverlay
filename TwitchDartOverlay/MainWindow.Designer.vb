@@ -57,8 +57,32 @@ Partial Class MainWindow
         TextBox1 = New TextBox()
         btnStorno = New Button()
         btnNext = New Button()
+        gpPlayerList = New GroupBox()
+        tbPlayerPointsLeft5 = New TextBox()
+        tbPlayerPointsLeft4 = New TextBox()
+        tbPlayerPointsLeft3 = New TextBox()
+        tbPlayerPointsLeft2 = New TextBox()
+        tbPlayerPointsLeft1 = New TextBox()
+        tbPlayerName5 = New TextBox()
+        tbPlayerName4 = New TextBox()
+        tbPlayerName3 = New TextBox()
+        tbPlayerName2 = New TextBox()
+        tbPlayerName1 = New TextBox()
+        lblCurrentPlayer = New Label()
+        gpGameOptions = New GroupBox()
+        Label2 = New Label()
+        Label1 = New Label()
+        NumericUpDown1 = New NumericUpDown()
+        cbGameMode = New ComboBox()
+        gpCurrentPlayer = New GroupBox()
+        btnStartGame = New Button()
+        btnStopGame = New Button()
         gpDartPoints.SuspendLayout()
         gpThrows.SuspendLayout()
+        gpPlayerList.SuspendLayout()
+        gpGameOptions.SuspendLayout()
+        CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
+        gpCurrentPlayer.SuspendLayout()
         SuspendLayout()
         ' 
         ' gpDartPoints
@@ -88,9 +112,9 @@ Partial Class MainWindow
         gpDartPoints.Controls.Add(btnTriple)
         gpDartPoints.Controls.Add(btnDouble)
         gpDartPoints.Controls.Add(btnMiss)
-        gpDartPoints.Location = New Point(12, 450)
+        gpDartPoints.Location = New Point(12, 440)
         gpDartPoints.Name = "gpDartPoints"
-        gpDartPoints.Size = New Size(186, 180)
+        gpDartPoints.Size = New Size(186, 190)
         gpDartPoints.TabIndex = 0
         gpDartPoints.TabStop = False
         gpDartPoints.Text = "Dart Points"
@@ -357,9 +381,9 @@ Partial Class MainWindow
         gpThrows.Controls.Add(lblWurf1)
         gpThrows.Controls.Add(lblWurf3)
         gpThrows.Controls.Add(lblWurf2)
-        gpThrows.Location = New Point(204, 450)
+        gpThrows.Location = New Point(204, 440)
         gpThrows.Name = "gpThrows"
-        gpThrows.Size = New Size(154, 85)
+        gpThrows.Size = New Size(154, 95)
         gpThrows.TabIndex = 4
         gpThrows.TabStop = False
         gpThrows.Text = "Throws"
@@ -369,6 +393,7 @@ Partial Class MainWindow
         TextBox3.BorderStyle = BorderStyle.None
         TextBox3.Location = New Point(64, 59)
         TextBox3.Name = "TextBox3"
+        TextBox3.ReadOnly = True
         TextBox3.Size = New Size(81, 16)
         TextBox3.TabIndex = 6
         ' 
@@ -377,6 +402,7 @@ Partial Class MainWindow
         TextBox2.BorderStyle = BorderStyle.None
         TextBox2.Location = New Point(64, 39)
         TextBox2.Name = "TextBox2"
+        TextBox2.ReadOnly = True
         TextBox2.Size = New Size(81, 16)
         TextBox2.TabIndex = 5
         ' 
@@ -385,32 +411,242 @@ Partial Class MainWindow
         TextBox1.BorderStyle = BorderStyle.None
         TextBox1.Location = New Point(64, 19)
         TextBox1.Name = "TextBox1"
+        TextBox1.ReadOnly = True
         TextBox1.Size = New Size(81, 16)
         TextBox1.TabIndex = 4
         ' 
         ' btnStorno
         ' 
-        btnStorno.Location = New Point(204, 542)
+        btnStorno.Location = New Point(204, 532)
         btnStorno.Name = "btnStorno"
-        btnStorno.Size = New Size(154, 35)
+        btnStorno.Size = New Size(154, 45)
         btnStorno.TabIndex = 5
         btnStorno.Text = "Storno"
         btnStorno.UseVisualStyleBackColor = True
         ' 
         ' btnNext
         ' 
-        btnNext.Location = New Point(204, 595)
+        btnNext.Location = New Point(204, 585)
         btnNext.Name = "btnNext"
-        btnNext.Size = New Size(154, 35)
+        btnNext.Size = New Size(154, 45)
         btnNext.TabIndex = 6
         btnNext.Text = "Next Player"
         btnNext.UseVisualStyleBackColor = True
+        ' 
+        ' gpPlayerList
+        ' 
+        gpPlayerList.Controls.Add(tbPlayerPointsLeft5)
+        gpPlayerList.Controls.Add(tbPlayerPointsLeft4)
+        gpPlayerList.Controls.Add(tbPlayerPointsLeft3)
+        gpPlayerList.Controls.Add(tbPlayerPointsLeft2)
+        gpPlayerList.Controls.Add(tbPlayerPointsLeft1)
+        gpPlayerList.Controls.Add(tbPlayerName5)
+        gpPlayerList.Controls.Add(tbPlayerName4)
+        gpPlayerList.Controls.Add(tbPlayerName3)
+        gpPlayerList.Controls.Add(tbPlayerName2)
+        gpPlayerList.Controls.Add(tbPlayerName1)
+        gpPlayerList.Location = New Point(12, 116)
+        gpPlayerList.Name = "gpPlayerList"
+        gpPlayerList.Size = New Size(340, 136)
+        gpPlayerList.TabIndex = 8
+        gpPlayerList.TabStop = False
+        gpPlayerList.Text = "Player List"
+        ' 
+        ' tbPlayerPointsLeft5
+        ' 
+        tbPlayerPointsLeft5.BorderStyle = BorderStyle.None
+        tbPlayerPointsLeft5.Location = New Point(198, 110)
+        tbPlayerPointsLeft5.Name = "tbPlayerPointsLeft5"
+        tbPlayerPointsLeft5.ReadOnly = True
+        tbPlayerPointsLeft5.Size = New Size(33, 16)
+        tbPlayerPointsLeft5.TabIndex = 9
+        tbPlayerPointsLeft5.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' tbPlayerPointsLeft4
+        ' 
+        tbPlayerPointsLeft4.BorderStyle = BorderStyle.None
+        tbPlayerPointsLeft4.Location = New Point(198, 88)
+        tbPlayerPointsLeft4.Name = "tbPlayerPointsLeft4"
+        tbPlayerPointsLeft4.ReadOnly = True
+        tbPlayerPointsLeft4.Size = New Size(33, 16)
+        tbPlayerPointsLeft4.TabIndex = 8
+        tbPlayerPointsLeft4.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' tbPlayerPointsLeft3
+        ' 
+        tbPlayerPointsLeft3.BorderStyle = BorderStyle.None
+        tbPlayerPointsLeft3.Location = New Point(198, 66)
+        tbPlayerPointsLeft3.Name = "tbPlayerPointsLeft3"
+        tbPlayerPointsLeft3.ReadOnly = True
+        tbPlayerPointsLeft3.Size = New Size(33, 16)
+        tbPlayerPointsLeft3.TabIndex = 7
+        tbPlayerPointsLeft3.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' tbPlayerPointsLeft2
+        ' 
+        tbPlayerPointsLeft2.BorderStyle = BorderStyle.None
+        tbPlayerPointsLeft2.Location = New Point(198, 44)
+        tbPlayerPointsLeft2.Name = "tbPlayerPointsLeft2"
+        tbPlayerPointsLeft2.ReadOnly = True
+        tbPlayerPointsLeft2.Size = New Size(33, 16)
+        tbPlayerPointsLeft2.TabIndex = 6
+        tbPlayerPointsLeft2.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' tbPlayerPointsLeft1
+        ' 
+        tbPlayerPointsLeft1.BorderStyle = BorderStyle.None
+        tbPlayerPointsLeft1.Location = New Point(198, 22)
+        tbPlayerPointsLeft1.Name = "tbPlayerPointsLeft1"
+        tbPlayerPointsLeft1.ReadOnly = True
+        tbPlayerPointsLeft1.Size = New Size(33, 16)
+        tbPlayerPointsLeft1.TabIndex = 5
+        tbPlayerPointsLeft1.TextAlign = HorizontalAlignment.Center
+        ' 
+        ' tbPlayerName5
+        ' 
+        tbPlayerName5.BorderStyle = BorderStyle.None
+        tbPlayerName5.Location = New Point(8, 110)
+        tbPlayerName5.Name = "tbPlayerName5"
+        tbPlayerName5.Size = New Size(172, 16)
+        tbPlayerName5.TabIndex = 4
+        tbPlayerName5.Text = "Player Name 5"
+        ' 
+        ' tbPlayerName4
+        ' 
+        tbPlayerName4.BorderStyle = BorderStyle.None
+        tbPlayerName4.Location = New Point(8, 88)
+        tbPlayerName4.Name = "tbPlayerName4"
+        tbPlayerName4.Size = New Size(172, 16)
+        tbPlayerName4.TabIndex = 3
+        tbPlayerName4.Text = "Player Name 4"
+        ' 
+        ' tbPlayerName3
+        ' 
+        tbPlayerName3.BorderStyle = BorderStyle.None
+        tbPlayerName3.Location = New Point(8, 66)
+        tbPlayerName3.Name = "tbPlayerName3"
+        tbPlayerName3.Size = New Size(172, 16)
+        tbPlayerName3.TabIndex = 2
+        tbPlayerName3.Text = "Player Name 3"
+        ' 
+        ' tbPlayerName2
+        ' 
+        tbPlayerName2.BorderStyle = BorderStyle.None
+        tbPlayerName2.Location = New Point(8, 44)
+        tbPlayerName2.Name = "tbPlayerName2"
+        tbPlayerName2.Size = New Size(172, 16)
+        tbPlayerName2.TabIndex = 1
+        tbPlayerName2.Text = "Player Name 2"
+        ' 
+        ' tbPlayerName1
+        ' 
+        tbPlayerName1.BorderStyle = BorderStyle.None
+        tbPlayerName1.Location = New Point(8, 22)
+        tbPlayerName1.Name = "tbPlayerName1"
+        tbPlayerName1.Size = New Size(172, 16)
+        tbPlayerName1.TabIndex = 0
+        tbPlayerName1.Text = "Player Name 1"
+        ' 
+        ' lblCurrentPlayer
+        ' 
+        lblCurrentPlayer.AutoSize = True
+        lblCurrentPlayer.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblCurrentPlayer.Location = New Point(58, 19)
+        lblCurrentPlayer.Name = "lblCurrentPlayer"
+        lblCurrentPlayer.Size = New Size(236, 37)
+        lblCurrentPlayer.TabIndex = 9
+        lblCurrentPlayer.Text = "No Game Running"
+        ' 
+        ' gpGameOptions
+        ' 
+        gpGameOptions.Controls.Add(Label2)
+        gpGameOptions.Controls.Add(Label1)
+        gpGameOptions.Controls.Add(NumericUpDown1)
+        gpGameOptions.Controls.Add(cbGameMode)
+        gpGameOptions.Location = New Point(12, 16)
+        gpGameOptions.Name = "gpGameOptions"
+        gpGameOptions.Size = New Size(340, 94)
+        gpGameOptions.TabIndex = 10
+        gpGameOptions.TabStop = False
+        gpGameOptions.Text = "Game Options"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(9, 55)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(75, 15)
+        Label2.TabIndex = 3
+        Label2.Text = "Player Count"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(9, 26)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(69, 15)
+        Label1.TabIndex = 2
+        Label1.Text = "GameMode"
+        ' 
+        ' NumericUpDown1
+        ' 
+        NumericUpDown1.Location = New Point(100, 47)
+        NumericUpDown1.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
+        NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NumericUpDown1.Name = "NumericUpDown1"
+        NumericUpDown1.Size = New Size(38, 23)
+        NumericUpDown1.TabIndex = 1
+        NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        ' 
+        ' cbGameMode
+        ' 
+        cbGameMode.DropDownStyle = ComboBoxStyle.DropDownList
+        cbGameMode.FormattingEnabled = True
+        cbGameMode.ImeMode = ImeMode.Off
+        cbGameMode.Items.AddRange(New Object() {"301", "501"})
+        cbGameMode.Location = New Point(99, 18)
+        cbGameMode.Name = "cbGameMode"
+        cbGameMode.Size = New Size(66, 23)
+        cbGameMode.TabIndex = 0
+        ' 
+        ' gpCurrentPlayer
+        ' 
+        gpCurrentPlayer.Controls.Add(lblCurrentPlayer)
+        gpCurrentPlayer.Location = New Point(12, 362)
+        gpCurrentPlayer.Name = "gpCurrentPlayer"
+        gpCurrentPlayer.Size = New Size(346, 72)
+        gpCurrentPlayer.TabIndex = 11
+        gpCurrentPlayer.TabStop = False
+        gpCurrentPlayer.Text = "Current Player"
+        ' 
+        ' btnStartGame
+        ' 
+        btnStartGame.Location = New Point(12, 258)
+        btnStartGame.Name = "btnStartGame"
+        btnStartGame.Size = New Size(115, 48)
+        btnStartGame.TabIndex = 12
+        btnStartGame.Text = "Start Game"
+        btnStartGame.UseVisualStyleBackColor = True
+        ' 
+        ' btnStopGame
+        ' 
+        btnStopGame.Location = New Point(234, 258)
+        btnStopGame.Name = "btnStopGame"
+        btnStopGame.Size = New Size(115, 48)
+        btnStopGame.TabIndex = 13
+        btnStopGame.Text = "Stop Game"
+        btnStopGame.UseVisualStyleBackColor = True
         ' 
         ' MainWindow
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(368, 642)
+        ClientSize = New Size(368, 639)
+        Controls.Add(btnStopGame)
+        Controls.Add(btnStartGame)
+        Controls.Add(gpCurrentPlayer)
+        Controls.Add(gpGameOptions)
+        Controls.Add(gpPlayerList)
         Controls.Add(btnNext)
         Controls.Add(btnStorno)
         Controls.Add(gpThrows)
@@ -420,6 +656,13 @@ Partial Class MainWindow
         gpDartPoints.ResumeLayout(False)
         gpThrows.ResumeLayout(False)
         gpThrows.PerformLayout()
+        gpPlayerList.ResumeLayout(False)
+        gpPlayerList.PerformLayout()
+        gpGameOptions.ResumeLayout(False)
+        gpGameOptions.PerformLayout()
+        CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
+        gpCurrentPlayer.ResumeLayout(False)
+        gpCurrentPlayer.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -458,5 +701,25 @@ Partial Class MainWindow
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btnStorno As Button
     Friend WithEvents btnNext As Button
+    Friend WithEvents gpPlayerList As GroupBox
+    Friend WithEvents tbPlayerName1 As TextBox
+    Friend WithEvents tbPlayerName5 As TextBox
+    Friend WithEvents tbPlayerName4 As TextBox
+    Friend WithEvents tbPlayerName3 As TextBox
+    Friend WithEvents tbPlayerName2 As TextBox
+    Friend WithEvents tbPlayerPointsLeft1 As TextBox
+    Friend WithEvents tbPlayerPointsLeft5 As TextBox
+    Friend WithEvents tbPlayerPointsLeft4 As TextBox
+    Friend WithEvents tbPlayerPointsLeft3 As TextBox
+    Friend WithEvents tbPlayerPointsLeft2 As TextBox
+    Friend WithEvents lblCurrentPlayer As Label
+    Friend WithEvents gpGameOptions As GroupBox
+    Friend WithEvents cbGameMode As ComboBox
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents gpCurrentPlayer As GroupBox
+    Friend WithEvents btnStartGame As Button
+    Friend WithEvents btnStopGame As Button
 
 End Class
