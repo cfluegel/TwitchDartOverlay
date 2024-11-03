@@ -72,17 +72,20 @@ Partial Class MainWindow
         gpGameOptions = New GroupBox()
         Label2 = New Label()
         Label1 = New Label()
-        NumericUpDown1 = New NumericUpDown()
+        NUDPlayerCount = New NumericUpDown()
         cbGameMode = New ComboBox()
         gpCurrentPlayer = New GroupBox()
         btnStartGame = New Button()
         btnStopGame = New Button()
+        lblRoundCount = New Label()
+        gpRoundCounter = New GroupBox()
         gpDartPoints.SuspendLayout()
         gpThrows.SuspendLayout()
         gpPlayerList.SuspendLayout()
         gpGameOptions.SuspendLayout()
-        CType(NumericUpDown1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(NUDPlayerCount, ComponentModel.ISupportInitialize).BeginInit()
         gpCurrentPlayer.SuspendLayout()
+        gpRoundCounter.SuspendLayout()
         SuspendLayout()
         ' 
         ' gpDartPoints
@@ -118,6 +121,7 @@ Partial Class MainWindow
         gpDartPoints.TabIndex = 0
         gpDartPoints.TabStop = False
         gpDartPoints.Text = "Dart Points"
+        gpDartPoints.Visible = False
         ' 
         ' btnHalfBull
         ' 
@@ -349,7 +353,7 @@ Partial Class MainWindow
         ' lblWurf1
         ' 
         lblWurf1.AutoSize = True
-        lblWurf1.Location = New Point(6, 19)
+        lblWurf1.Location = New Point(6, 22)
         lblWurf1.Name = "lblWurf1"
         lblWurf1.Size = New Size(52, 15)
         lblWurf1.TabIndex = 1
@@ -358,7 +362,7 @@ Partial Class MainWindow
         ' lblWurf2
         ' 
         lblWurf2.AutoSize = True
-        lblWurf2.Location = New Point(6, 39)
+        lblWurf2.Location = New Point(6, 42)
         lblWurf2.Name = "lblWurf2"
         lblWurf2.Size = New Size(52, 15)
         lblWurf2.TabIndex = 2
@@ -367,7 +371,7 @@ Partial Class MainWindow
         ' lblWurf3
         ' 
         lblWurf3.AutoSize = True
-        lblWurf3.Location = New Point(6, 60)
+        lblWurf3.Location = New Point(6, 63)
         lblWurf3.Name = "lblWurf3"
         lblWurf3.Size = New Size(52, 15)
         lblWurf3.TabIndex = 3
@@ -383,15 +387,16 @@ Partial Class MainWindow
         gpThrows.Controls.Add(lblWurf2)
         gpThrows.Location = New Point(204, 440)
         gpThrows.Name = "gpThrows"
-        gpThrows.Size = New Size(154, 95)
+        gpThrows.Size = New Size(154, 86)
         gpThrows.TabIndex = 4
         gpThrows.TabStop = False
         gpThrows.Text = "Throws"
+        gpThrows.Visible = False
         ' 
         ' TextBox3
         ' 
         TextBox3.BorderStyle = BorderStyle.None
-        TextBox3.Location = New Point(64, 59)
+        TextBox3.Location = New Point(64, 62)
         TextBox3.Name = "TextBox3"
         TextBox3.ReadOnly = True
         TextBox3.Size = New Size(81, 16)
@@ -400,7 +405,7 @@ Partial Class MainWindow
         ' TextBox2
         ' 
         TextBox2.BorderStyle = BorderStyle.None
-        TextBox2.Location = New Point(64, 39)
+        TextBox2.Location = New Point(64, 42)
         TextBox2.Name = "TextBox2"
         TextBox2.ReadOnly = True
         TextBox2.Size = New Size(81, 16)
@@ -409,7 +414,7 @@ Partial Class MainWindow
         ' TextBox1
         ' 
         TextBox1.BorderStyle = BorderStyle.None
-        TextBox1.Location = New Point(64, 19)
+        TextBox1.Location = New Point(64, 22)
         TextBox1.Name = "TextBox1"
         TextBox1.ReadOnly = True
         TextBox1.Size = New Size(81, 16)
@@ -423,15 +428,17 @@ Partial Class MainWindow
         btnStorno.TabIndex = 5
         btnStorno.Text = "Storno"
         btnStorno.UseVisualStyleBackColor = True
+        btnStorno.Visible = False
         ' 
         ' btnNext
         ' 
-        btnNext.Location = New Point(204, 585)
+        btnNext.Location = New Point(204, 582)
         btnNext.Name = "btnNext"
         btnNext.Size = New Size(154, 45)
         btnNext.TabIndex = 6
         btnNext.Text = "Next Player"
         btnNext.UseVisualStyleBackColor = True
+        btnNext.Visible = False
         ' 
         ' gpPlayerList
         ' 
@@ -551,7 +558,7 @@ Partial Class MainWindow
         ' 
         lblCurrentPlayer.AutoSize = True
         lblCurrentPlayer.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblCurrentPlayer.Location = New Point(58, 19)
+        lblCurrentPlayer.Location = New Point(6, 19)
         lblCurrentPlayer.Name = "lblCurrentPlayer"
         lblCurrentPlayer.Size = New Size(236, 37)
         lblCurrentPlayer.TabIndex = 9
@@ -561,7 +568,7 @@ Partial Class MainWindow
         ' 
         gpGameOptions.Controls.Add(Label2)
         gpGameOptions.Controls.Add(Label1)
-        gpGameOptions.Controls.Add(NumericUpDown1)
+        gpGameOptions.Controls.Add(NUDPlayerCount)
         gpGameOptions.Controls.Add(cbGameMode)
         gpGameOptions.Location = New Point(12, 16)
         gpGameOptions.Name = "gpGameOptions"
@@ -588,15 +595,15 @@ Partial Class MainWindow
         Label1.TabIndex = 2
         Label1.Text = "GameMode"
         ' 
-        ' NumericUpDown1
+        ' NUDPlayerCount
         ' 
-        NumericUpDown1.Location = New Point(100, 47)
-        NumericUpDown1.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
-        NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        NumericUpDown1.Name = "NumericUpDown1"
-        NumericUpDown1.Size = New Size(38, 23)
-        NumericUpDown1.TabIndex = 1
-        NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        NUDPlayerCount.Location = New Point(100, 47)
+        NUDPlayerCount.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
+        NUDPlayerCount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        NUDPlayerCount.Name = "NUDPlayerCount"
+        NUDPlayerCount.Size = New Size(38, 23)
+        NUDPlayerCount.TabIndex = 1
+        NUDPlayerCount.Value = New Decimal(New Integer() {1, 0, 0, 0})
         ' 
         ' cbGameMode
         ' 
@@ -614,10 +621,11 @@ Partial Class MainWindow
         gpCurrentPlayer.Controls.Add(lblCurrentPlayer)
         gpCurrentPlayer.Location = New Point(12, 362)
         gpCurrentPlayer.Name = "gpCurrentPlayer"
-        gpCurrentPlayer.Size = New Size(346, 72)
+        gpCurrentPlayer.Size = New Size(283, 72)
         gpCurrentPlayer.TabIndex = 11
         gpCurrentPlayer.TabStop = False
         gpCurrentPlayer.Text = "Current Player"
+        gpCurrentPlayer.Visible = False
         ' 
         ' btnStartGame
         ' 
@@ -630,6 +638,7 @@ Partial Class MainWindow
         ' 
         ' btnStopGame
         ' 
+        btnStopGame.Enabled = False
         btnStopGame.Location = New Point(234, 258)
         btnStopGame.Name = "btnStopGame"
         btnStopGame.Size = New Size(115, 48)
@@ -637,11 +646,33 @@ Partial Class MainWindow
         btnStopGame.Text = "Stop Game"
         btnStopGame.UseVisualStyleBackColor = True
         ' 
+        ' lblRoundCount
+        ' 
+        lblRoundCount.AutoSize = True
+        lblRoundCount.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblRoundCount.Location = New Point(6, 19)
+        lblRoundCount.Name = "lblRoundCount"
+        lblRoundCount.Size = New Size(32, 37)
+        lblRoundCount.TabIndex = 14
+        lblRoundCount.Text = "0"
+        ' 
+        ' gpRoundCounter
+        ' 
+        gpRoundCounter.Controls.Add(lblRoundCount)
+        gpRoundCounter.Location = New Point(301, 362)
+        gpRoundCounter.Name = "gpRoundCounter"
+        gpRoundCounter.Size = New Size(57, 72)
+        gpRoundCounter.TabIndex = 15
+        gpRoundCounter.TabStop = False
+        gpRoundCounter.Text = "Round"
+        gpRoundCounter.Visible = False
+        ' 
         ' MainWindow
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(368, 639)
+        Controls.Add(gpRoundCounter)
         Controls.Add(btnStopGame)
         Controls.Add(btnStartGame)
         Controls.Add(gpCurrentPlayer)
@@ -660,9 +691,11 @@ Partial Class MainWindow
         gpPlayerList.PerformLayout()
         gpGameOptions.ResumeLayout(False)
         gpGameOptions.PerformLayout()
-        CType(NumericUpDown1, ComponentModel.ISupportInitialize).EndInit()
+        CType(NUDPlayerCount, ComponentModel.ISupportInitialize).EndInit()
         gpCurrentPlayer.ResumeLayout(False)
         gpCurrentPlayer.PerformLayout()
+        gpRoundCounter.ResumeLayout(False)
+        gpRoundCounter.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -715,11 +748,13 @@ Partial Class MainWindow
     Friend WithEvents lblCurrentPlayer As Label
     Friend WithEvents gpGameOptions As GroupBox
     Friend WithEvents cbGameMode As ComboBox
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents NUDPlayerCount As NumericUpDown
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents gpCurrentPlayer As GroupBox
     Friend WithEvents btnStartGame As Button
     Friend WithEvents btnStopGame As Button
+    Friend WithEvents lblRoundCount As Label
+    Friend WithEvents gpRoundCounter As GroupBox
 
 End Class
