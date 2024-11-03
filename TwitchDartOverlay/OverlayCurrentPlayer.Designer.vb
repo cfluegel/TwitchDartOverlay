@@ -22,9 +22,15 @@ Partial Class OverlayCurrentPlayer
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "OverlayCurrentPlayer"
+        SuspendLayout()
+        ' 
+        ' OverlayCurrentPlayer
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Name = "OverlayCurrentPlayer"
+        Text = "Twicht Dart Overalay - Overlay - Current Player"
+        ResumeLayout(False)
     End Sub
 End Class
