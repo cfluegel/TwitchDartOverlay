@@ -23,6 +23,9 @@ Partial Class MainWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         gpDartPoints = New GroupBox()
+        RBTriple = New RadioButton()
+        RBDouble = New RadioButton()
+        RBSingle = New RadioButton()
         btnHalfBull = New Button()
         btnBull = New Button()
         Button19 = New Button()
@@ -45,16 +48,14 @@ Partial Class MainWindow
         btnPoint3 = New Button()
         btnPoint2 = New Button()
         btnPoint1 = New Button()
-        btnTriple = New Button()
-        btnDouble = New Button()
         btnMiss = New Button()
         lblWurf1 = New Label()
         lblWurf2 = New Label()
         lblWurf3 = New Label()
         gpThrows = New GroupBox()
-        TextBox3 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox1 = New TextBox()
+        TBThrow3 = New TextBox()
+        TBThrow2 = New TextBox()
+        TBThrow1 = New TextBox()
         btnStorno = New Button()
         btnNext = New Button()
         gpPlayerList = New GroupBox()
@@ -70,6 +71,9 @@ Partial Class MainWindow
         tbPlayerName1 = New TextBox()
         lblCurrentPlayer = New Label()
         gpGameOptions = New GroupBox()
+        RBMasterOut = New RadioButton()
+        RBDoubleOut = New RadioButton()
+        RBSingleOut = New RadioButton()
         Label2 = New Label()
         Label1 = New Label()
         NUDPlayerCount = New NumericUpDown()
@@ -90,6 +94,9 @@ Partial Class MainWindow
         ' 
         ' gpDartPoints
         ' 
+        gpDartPoints.Controls.Add(RBTriple)
+        gpDartPoints.Controls.Add(RBDouble)
+        gpDartPoints.Controls.Add(RBSingle)
         gpDartPoints.Controls.Add(btnHalfBull)
         gpDartPoints.Controls.Add(btnBull)
         gpDartPoints.Controls.Add(Button19)
@@ -112,21 +119,52 @@ Partial Class MainWindow
         gpDartPoints.Controls.Add(btnPoint3)
         gpDartPoints.Controls.Add(btnPoint2)
         gpDartPoints.Controls.Add(btnPoint1)
-        gpDartPoints.Controls.Add(btnTriple)
-        gpDartPoints.Controls.Add(btnDouble)
         gpDartPoints.Controls.Add(btnMiss)
-        gpDartPoints.Location = New Point(12, 440)
+        gpDartPoints.Location = New Point(12, 408)
         gpDartPoints.Name = "gpDartPoints"
-        gpDartPoints.Size = New Size(186, 190)
+        gpDartPoints.Size = New Size(186, 219)
         gpDartPoints.TabIndex = 0
         gpDartPoints.TabStop = False
         gpDartPoints.Text = "Dart Points"
         gpDartPoints.Visible = False
         ' 
+        ' RBTriple
+        ' 
+        RBTriple.AutoSize = True
+        RBTriple.Location = New Point(6, 72)
+        RBTriple.Name = "RBTriple"
+        RBTriple.Size = New Size(53, 19)
+        RBTriple.TabIndex = 27
+        RBTriple.TabStop = True
+        RBTriple.Text = "Triple"
+        RBTriple.UseVisualStyleBackColor = True
+        ' 
+        ' RBDouble
+        ' 
+        RBDouble.AutoSize = True
+        RBDouble.Location = New Point(6, 47)
+        RBDouble.Name = "RBDouble"
+        RBDouble.Size = New Size(63, 19)
+        RBDouble.TabIndex = 26
+        RBDouble.TabStop = True
+        RBDouble.Text = "Double"
+        RBDouble.UseVisualStyleBackColor = True
+        ' 
+        ' RBSingle
+        ' 
+        RBSingle.AutoSize = True
+        RBSingle.Location = New Point(6, 22)
+        RBSingle.Name = "RBSingle"
+        RBSingle.Size = New Size(57, 19)
+        RBSingle.TabIndex = 25
+        RBSingle.TabStop = True
+        RBSingle.Text = "Single"
+        RBSingle.UseVisualStyleBackColor = True
+        ' 
         ' btnHalfBull
         ' 
         btnHalfBull.BackColor = Color.LimeGreen
-        btnHalfBull.Location = New Point(114, 22)
+        btnHalfBull.Location = New Point(114, 70)
         btnHalfBull.Name = "btnHalfBull"
         btnHalfBull.Size = New Size(30, 23)
         btnHalfBull.TabIndex = 24
@@ -136,7 +174,7 @@ Partial Class MainWindow
         ' btnBull
         ' 
         btnBull.BackColor = Color.Red
-        btnBull.Location = New Point(150, 22)
+        btnBull.Location = New Point(150, 70)
         btnBull.Name = "btnBull"
         btnBull.Size = New Size(30, 23)
         btnBull.TabIndex = 23
@@ -145,7 +183,7 @@ Partial Class MainWindow
         ' 
         ' Button19
         ' 
-        Button19.Location = New Point(150, 150)
+        Button19.Location = New Point(150, 186)
         Button19.Name = "Button19"
         Button19.Size = New Size(30, 23)
         Button19.TabIndex = 22
@@ -154,7 +192,7 @@ Partial Class MainWindow
         ' 
         ' Button18
         ' 
-        Button18.Location = New Point(114, 150)
+        Button18.Location = New Point(114, 186)
         Button18.Name = "Button18"
         Button18.Size = New Size(30, 23)
         Button18.TabIndex = 21
@@ -163,7 +201,7 @@ Partial Class MainWindow
         ' 
         ' Button17
         ' 
-        Button17.Location = New Point(78, 150)
+        Button17.Location = New Point(78, 186)
         Button17.Name = "Button17"
         Button17.Size = New Size(30, 23)
         Button17.TabIndex = 20
@@ -172,7 +210,7 @@ Partial Class MainWindow
         ' 
         ' Button16
         ' 
-        Button16.Location = New Point(42, 150)
+        Button16.Location = New Point(42, 186)
         Button16.Name = "Button16"
         Button16.Size = New Size(30, 23)
         Button16.TabIndex = 19
@@ -181,7 +219,7 @@ Partial Class MainWindow
         ' 
         ' Button15
         ' 
-        Button15.Location = New Point(6, 150)
+        Button15.Location = New Point(6, 186)
         Button15.Name = "Button15"
         Button15.Size = New Size(30, 23)
         Button15.TabIndex = 18
@@ -190,7 +228,7 @@ Partial Class MainWindow
         ' 
         ' Button14
         ' 
-        Button14.Location = New Point(150, 121)
+        Button14.Location = New Point(150, 157)
         Button14.Name = "Button14"
         Button14.Size = New Size(30, 23)
         Button14.TabIndex = 17
@@ -199,7 +237,7 @@ Partial Class MainWindow
         ' 
         ' Button13
         ' 
-        Button13.Location = New Point(114, 121)
+        Button13.Location = New Point(114, 157)
         Button13.Name = "Button13"
         Button13.Size = New Size(30, 23)
         Button13.TabIndex = 16
@@ -208,7 +246,7 @@ Partial Class MainWindow
         ' 
         ' Button12
         ' 
-        Button12.Location = New Point(78, 121)
+        Button12.Location = New Point(78, 157)
         Button12.Name = "Button12"
         Button12.Size = New Size(30, 23)
         Button12.TabIndex = 15
@@ -217,7 +255,7 @@ Partial Class MainWindow
         ' 
         ' Button11
         ' 
-        Button11.Location = New Point(42, 121)
+        Button11.Location = New Point(42, 157)
         Button11.Name = "Button11"
         Button11.Size = New Size(30, 23)
         Button11.TabIndex = 14
@@ -226,7 +264,7 @@ Partial Class MainWindow
         ' 
         ' Button10
         ' 
-        Button10.Location = New Point(6, 121)
+        Button10.Location = New Point(6, 157)
         Button10.Name = "Button10"
         Button10.Size = New Size(30, 23)
         Button10.TabIndex = 13
@@ -235,7 +273,7 @@ Partial Class MainWindow
         ' 
         ' Button9
         ' 
-        Button9.Location = New Point(150, 92)
+        Button9.Location = New Point(150, 128)
         Button9.Name = "Button9"
         Button9.Size = New Size(30, 23)
         Button9.TabIndex = 12
@@ -244,7 +282,7 @@ Partial Class MainWindow
         ' 
         ' Button8
         ' 
-        Button8.Location = New Point(114, 92)
+        Button8.Location = New Point(114, 128)
         Button8.Name = "Button8"
         Button8.Size = New Size(30, 23)
         Button8.TabIndex = 11
@@ -253,7 +291,7 @@ Partial Class MainWindow
         ' 
         ' Button7
         ' 
-        Button7.Location = New Point(78, 92)
+        Button7.Location = New Point(78, 128)
         Button7.Name = "Button7"
         Button7.Size = New Size(30, 23)
         Button7.TabIndex = 10
@@ -262,7 +300,7 @@ Partial Class MainWindow
         ' 
         ' Button6
         ' 
-        Button6.Location = New Point(42, 92)
+        Button6.Location = New Point(42, 128)
         Button6.Name = "Button6"
         Button6.Size = New Size(30, 23)
         Button6.TabIndex = 9
@@ -271,7 +309,7 @@ Partial Class MainWindow
         ' 
         ' btnPoint6
         ' 
-        btnPoint6.Location = New Point(6, 92)
+        btnPoint6.Location = New Point(6, 128)
         btnPoint6.Name = "btnPoint6"
         btnPoint6.Size = New Size(30, 23)
         btnPoint6.TabIndex = 8
@@ -280,7 +318,7 @@ Partial Class MainWindow
         ' 
         ' btnPoint5
         ' 
-        btnPoint5.Location = New Point(150, 63)
+        btnPoint5.Location = New Point(150, 99)
         btnPoint5.Name = "btnPoint5"
         btnPoint5.Size = New Size(30, 23)
         btnPoint5.TabIndex = 7
@@ -289,7 +327,7 @@ Partial Class MainWindow
         ' 
         ' btnPoint4
         ' 
-        btnPoint4.Location = New Point(114, 63)
+        btnPoint4.Location = New Point(114, 99)
         btnPoint4.Name = "btnPoint4"
         btnPoint4.Size = New Size(30, 23)
         btnPoint4.TabIndex = 6
@@ -298,7 +336,7 @@ Partial Class MainWindow
         ' 
         ' btnPoint3
         ' 
-        btnPoint3.Location = New Point(78, 63)
+        btnPoint3.Location = New Point(78, 99)
         btnPoint3.Name = "btnPoint3"
         btnPoint3.Size = New Size(30, 23)
         btnPoint3.TabIndex = 5
@@ -307,7 +345,7 @@ Partial Class MainWindow
         ' 
         ' btnPoint2
         ' 
-        btnPoint2.Location = New Point(42, 63)
+        btnPoint2.Location = New Point(42, 99)
         btnPoint2.Name = "btnPoint2"
         btnPoint2.Size = New Size(30, 23)
         btnPoint2.TabIndex = 4
@@ -316,44 +354,26 @@ Partial Class MainWindow
         ' 
         ' btnPoint1
         ' 
-        btnPoint1.Location = New Point(6, 63)
+        btnPoint1.Location = New Point(6, 99)
         btnPoint1.Name = "btnPoint1"
         btnPoint1.Size = New Size(30, 23)
         btnPoint1.TabIndex = 3
         btnPoint1.Text = "1"
         btnPoint1.UseVisualStyleBackColor = True
         ' 
-        ' btnTriple
-        ' 
-        btnTriple.Location = New Point(78, 22)
-        btnTriple.Name = "btnTriple"
-        btnTriple.Size = New Size(30, 23)
-        btnTriple.TabIndex = 2
-        btnTriple.Text = "T"
-        btnTriple.UseVisualStyleBackColor = True
-        ' 
-        ' btnDouble
-        ' 
-        btnDouble.Location = New Point(42, 22)
-        btnDouble.Name = "btnDouble"
-        btnDouble.Size = New Size(30, 23)
-        btnDouble.TabIndex = 1
-        btnDouble.Text = "D"
-        btnDouble.UseVisualStyleBackColor = True
-        ' 
         ' btnMiss
         ' 
-        btnMiss.Location = New Point(6, 22)
+        btnMiss.Location = New Point(132, 22)
         btnMiss.Name = "btnMiss"
-        btnMiss.Size = New Size(30, 23)
+        btnMiss.Size = New Size(48, 29)
         btnMiss.TabIndex = 0
-        btnMiss.Text = "-"
+        btnMiss.Text = "Miss"
         btnMiss.UseVisualStyleBackColor = True
         ' 
         ' lblWurf1
         ' 
         lblWurf1.AutoSize = True
-        lblWurf1.Location = New Point(6, 22)
+        lblWurf1.Location = New Point(6, 29)
         lblWurf1.Name = "lblWurf1"
         lblWurf1.Size = New Size(52, 15)
         lblWurf1.TabIndex = 1
@@ -362,7 +382,7 @@ Partial Class MainWindow
         ' lblWurf2
         ' 
         lblWurf2.AutoSize = True
-        lblWurf2.Location = New Point(6, 42)
+        lblWurf2.Location = New Point(6, 52)
         lblWurf2.Name = "lblWurf2"
         lblWurf2.Size = New Size(52, 15)
         lblWurf2.TabIndex = 2
@@ -371,7 +391,7 @@ Partial Class MainWindow
         ' lblWurf3
         ' 
         lblWurf3.AutoSize = True
-        lblWurf3.Location = New Point(6, 63)
+        lblWurf3.Location = New Point(6, 76)
         lblWurf3.Name = "lblWurf3"
         lblWurf3.Size = New Size(52, 15)
         lblWurf3.TabIndex = 3
@@ -379,50 +399,50 @@ Partial Class MainWindow
         ' 
         ' gpThrows
         ' 
-        gpThrows.Controls.Add(TextBox3)
-        gpThrows.Controls.Add(TextBox2)
-        gpThrows.Controls.Add(TextBox1)
+        gpThrows.Controls.Add(TBThrow3)
+        gpThrows.Controls.Add(TBThrow2)
+        gpThrows.Controls.Add(TBThrow1)
         gpThrows.Controls.Add(lblWurf1)
         gpThrows.Controls.Add(lblWurf3)
         gpThrows.Controls.Add(lblWurf2)
-        gpThrows.Location = New Point(204, 440)
+        gpThrows.Location = New Point(204, 408)
         gpThrows.Name = "gpThrows"
-        gpThrows.Size = New Size(154, 86)
+        gpThrows.Size = New Size(154, 117)
         gpThrows.TabIndex = 4
         gpThrows.TabStop = False
         gpThrows.Text = "Throws"
         gpThrows.Visible = False
         ' 
-        ' TextBox3
+        ' TBThrow3
         ' 
-        TextBox3.BorderStyle = BorderStyle.None
-        TextBox3.Location = New Point(64, 62)
-        TextBox3.Name = "TextBox3"
-        TextBox3.ReadOnly = True
-        TextBox3.Size = New Size(81, 16)
-        TextBox3.TabIndex = 6
+        TBThrow3.BorderStyle = BorderStyle.None
+        TBThrow3.Location = New Point(64, 75)
+        TBThrow3.Name = "TBThrow3"
+        TBThrow3.ReadOnly = True
+        TBThrow3.Size = New Size(81, 16)
+        TBThrow3.TabIndex = 6
         ' 
-        ' TextBox2
+        ' TBThrow2
         ' 
-        TextBox2.BorderStyle = BorderStyle.None
-        TextBox2.Location = New Point(64, 42)
-        TextBox2.Name = "TextBox2"
-        TextBox2.ReadOnly = True
-        TextBox2.Size = New Size(81, 16)
-        TextBox2.TabIndex = 5
+        TBThrow2.BorderStyle = BorderStyle.None
+        TBThrow2.Location = New Point(64, 52)
+        TBThrow2.Name = "TBThrow2"
+        TBThrow2.ReadOnly = True
+        TBThrow2.Size = New Size(81, 16)
+        TBThrow2.TabIndex = 5
         ' 
-        ' TextBox1
+        ' TBThrow1
         ' 
-        TextBox1.BorderStyle = BorderStyle.None
-        TextBox1.Location = New Point(64, 22)
-        TextBox1.Name = "TextBox1"
-        TextBox1.ReadOnly = True
-        TextBox1.Size = New Size(81, 16)
-        TextBox1.TabIndex = 4
+        TBThrow1.BorderStyle = BorderStyle.None
+        TBThrow1.Location = New Point(64, 29)
+        TBThrow1.Name = "TBThrow1"
+        TBThrow1.ReadOnly = True
+        TBThrow1.Size = New Size(81, 16)
+        TBThrow1.TabIndex = 4
         ' 
         ' btnStorno
         ' 
-        btnStorno.Location = New Point(204, 532)
+        btnStorno.Location = New Point(204, 531)
         btnStorno.Name = "btnStorno"
         btnStorno.Size = New Size(154, 45)
         btnStorno.TabIndex = 5
@@ -452,7 +472,7 @@ Partial Class MainWindow
         gpPlayerList.Controls.Add(tbPlayerName3)
         gpPlayerList.Controls.Add(tbPlayerName2)
         gpPlayerList.Controls.Add(tbPlayerName1)
-        gpPlayerList.Location = New Point(12, 116)
+        gpPlayerList.Location = New Point(12, 109)
         gpPlayerList.Name = "gpPlayerList"
         gpPlayerList.Size = New Size(340, 136)
         gpPlayerList.TabIndex = 8
@@ -566,21 +586,56 @@ Partial Class MainWindow
         ' 
         ' gpGameOptions
         ' 
+        gpGameOptions.Controls.Add(RBMasterOut)
+        gpGameOptions.Controls.Add(RBDoubleOut)
+        gpGameOptions.Controls.Add(RBSingleOut)
         gpGameOptions.Controls.Add(Label2)
         gpGameOptions.Controls.Add(Label1)
         gpGameOptions.Controls.Add(NUDPlayerCount)
         gpGameOptions.Controls.Add(cbGameMode)
         gpGameOptions.Location = New Point(12, 16)
         gpGameOptions.Name = "gpGameOptions"
-        gpGameOptions.Size = New Size(340, 94)
+        gpGameOptions.Size = New Size(340, 85)
         gpGameOptions.TabIndex = 10
         gpGameOptions.TabStop = False
         gpGameOptions.Text = "Game Options"
         ' 
+        ' RBMasterOut
+        ' 
+        RBMasterOut.AutoSize = True
+        RBMasterOut.Location = New Point(248, 22)
+        RBMasterOut.Name = "RBMasterOut"
+        RBMasterOut.Size = New Size(86, 19)
+        RBMasterOut.TabIndex = 6
+        RBMasterOut.Text = "Master-Out"
+        RBMasterOut.UseVisualStyleBackColor = True
+        ' 
+        ' RBDoubleOut
+        ' 
+        RBDoubleOut.AutoSize = True
+        RBDoubleOut.Location = New Point(160, 47)
+        RBDoubleOut.Name = "RBDoubleOut"
+        RBDoubleOut.Size = New Size(88, 19)
+        RBDoubleOut.TabIndex = 5
+        RBDoubleOut.Text = "Double-Out"
+        RBDoubleOut.UseVisualStyleBackColor = True
+        ' 
+        ' RBSingleOut
+        ' 
+        RBSingleOut.AutoSize = True
+        RBSingleOut.Checked = True
+        RBSingleOut.Location = New Point(160, 22)
+        RBSingleOut.Name = "RBSingleOut"
+        RBSingleOut.Size = New Size(82, 19)
+        RBSingleOut.TabIndex = 4
+        RBSingleOut.TabStop = True
+        RBSingleOut.Text = "Single-Out"
+        RBSingleOut.UseVisualStyleBackColor = True
+        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(9, 55)
+        Label2.Location = New Point(6, 24)
         Label2.Name = "Label2"
         Label2.Size = New Size(75, 15)
         Label2.TabIndex = 3
@@ -589,7 +644,7 @@ Partial Class MainWindow
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(9, 26)
+        Label1.Location = New Point(6, 54)
         Label1.Name = "Label1"
         Label1.Size = New Size(69, 15)
         Label1.TabIndex = 2
@@ -597,7 +652,7 @@ Partial Class MainWindow
         ' 
         ' NUDPlayerCount
         ' 
-        NUDPlayerCount.Location = New Point(100, 47)
+        NUDPlayerCount.Location = New Point(87, 22)
         NUDPlayerCount.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
         NUDPlayerCount.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         NUDPlayerCount.Name = "NUDPlayerCount"
@@ -611,7 +666,7 @@ Partial Class MainWindow
         cbGameMode.FormattingEnabled = True
         cbGameMode.ImeMode = ImeMode.Off
         cbGameMode.Items.AddRange(New Object() {"301", "501"})
-        cbGameMode.Location = New Point(99, 18)
+        cbGameMode.Location = New Point(87, 50)
         cbGameMode.Name = "cbGameMode"
         cbGameMode.Size = New Size(66, 23)
         cbGameMode.TabIndex = 0
@@ -619,7 +674,7 @@ Partial Class MainWindow
         ' gpCurrentPlayer
         ' 
         gpCurrentPlayer.Controls.Add(lblCurrentPlayer)
-        gpCurrentPlayer.Location = New Point(12, 362)
+        gpCurrentPlayer.Location = New Point(12, 330)
         gpCurrentPlayer.Name = "gpCurrentPlayer"
         gpCurrentPlayer.Size = New Size(283, 72)
         gpCurrentPlayer.TabIndex = 11
@@ -629,7 +684,7 @@ Partial Class MainWindow
         ' 
         ' btnStartGame
         ' 
-        btnStartGame.Location = New Point(12, 258)
+        btnStartGame.Location = New Point(12, 251)
         btnStartGame.Name = "btnStartGame"
         btnStartGame.Size = New Size(115, 48)
         btnStartGame.TabIndex = 12
@@ -639,7 +694,7 @@ Partial Class MainWindow
         ' btnStopGame
         ' 
         btnStopGame.Enabled = False
-        btnStopGame.Location = New Point(234, 258)
+        btnStopGame.Location = New Point(237, 251)
         btnStopGame.Name = "btnStopGame"
         btnStopGame.Size = New Size(115, 48)
         btnStopGame.TabIndex = 13
@@ -659,7 +714,7 @@ Partial Class MainWindow
         ' gpRoundCounter
         ' 
         gpRoundCounter.Controls.Add(lblRoundCount)
-        gpRoundCounter.Location = New Point(301, 362)
+        gpRoundCounter.Location = New Point(301, 330)
         gpRoundCounter.Name = "gpRoundCounter"
         gpRoundCounter.Size = New Size(57, 72)
         gpRoundCounter.TabIndex = 15
@@ -685,6 +740,7 @@ Partial Class MainWindow
         Name = "MainWindow"
         Text = "Twicht Dart Overalay - Main Window"
         gpDartPoints.ResumeLayout(False)
+        gpDartPoints.PerformLayout()
         gpThrows.ResumeLayout(False)
         gpThrows.PerformLayout()
         gpPlayerList.ResumeLayout(False)
@@ -701,8 +757,6 @@ Partial Class MainWindow
 
     Friend WithEvents gpDartPoints As GroupBox
     Friend WithEvents btnMiss As Button
-    Friend WithEvents btnTriple As Button
-    Friend WithEvents btnDouble As Button
     Friend WithEvents btnPoint1 As Button
     Friend WithEvents btnHalfBull As Button
     Friend WithEvents btnBull As Button
@@ -729,9 +783,9 @@ Partial Class MainWindow
     Friend WithEvents lblWurf2 As Label
     Friend WithEvents lblWurf3 As Label
     Friend WithEvents gpThrows As GroupBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TBThrow3 As TextBox
+    Friend WithEvents TBThrow2 As TextBox
+    Friend WithEvents TBThrow1 As TextBox
     Friend WithEvents btnStorno As Button
     Friend WithEvents btnNext As Button
     Friend WithEvents gpPlayerList As GroupBox
@@ -756,5 +810,11 @@ Partial Class MainWindow
     Friend WithEvents btnStopGame As Button
     Friend WithEvents lblRoundCount As Label
     Friend WithEvents gpRoundCounter As GroupBox
+    Friend WithEvents RBSingleOut As RadioButton
+    Friend WithEvents RBDoubleOut As RadioButton
+    Friend WithEvents RBMasterOut As RadioButton
+    Friend WithEvents RBSingle As RadioButton
+    Friend WithEvents RBTriple As RadioButton
+    Friend WithEvents RBDouble As RadioButton
 
 End Class

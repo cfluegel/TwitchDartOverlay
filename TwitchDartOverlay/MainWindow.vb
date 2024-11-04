@@ -1,4 +1,8 @@
-﻿Public Class MainWindow
+﻿Imports System.Linq.Expressions
+
+Public Class MainWindow
+    Dim cntDartThrows As Integer = 1
+
     Private Sub EnablePlayers(count As Integer)
         tbPlayerName1.Enabled = count >= 1
         tbPlayerName2.Enabled = count >= 2
@@ -14,6 +18,25 @@
         tbPlayerName4.Enabled = False
         tbPlayerName5.Enabled = False
     End Sub
+
+    Private Function DartThrow(value As Integer)
+        Select Case cntDartThrows
+            Case 1
+                TBThrow1.Text = value
+            Case 2
+                TBThrow2.Text = value
+            Case 3
+                TBThrow3.Text = value
+            Case Else
+                ' All Throws are made 
+                Return 23
+        End Select
+
+
+
+
+    End Function
+
 
     Private Sub NUDPlayerCount_ValueChanged(sender As Object, e As EventArgs) Handles NUDPlayerCount.ValueChanged
         EnablePlayers(NUDPlayerCount.Value)
@@ -35,16 +58,18 @@
             tb.Text = cbGameMode.Text
         Next
 
-        btnStartGame.Enabled = False
-        NUDPlayerCount.Enabled = False
-        cbGameMode.Enabled = False
-
         btnStopGame.Enabled = True
+        btnStartGame.Enabled = False
+
+        For Each ctrl As Control In gpGameOptions.Controls
+            ctrl.Enabled = False
+        Next
 
         gpCurrentPlayer.Visible = True
         gpRoundCounter.Visible = True
         gpDartPoints.Visible = True
         gpThrows.Visible = True
+
         btnStorno.Visible = True
         btnNext.Visible = True
 
@@ -58,8 +83,9 @@
         lblRoundCount.Text = 0
         btnStartGame.Enabled = True
 
-        cbGameMode.Enabled = True
-        NUDPlayerCount.Enabled = True
+        For Each ctrl As Control In gpGameOptions.Controls
+            ctrl.Enabled = True
+        Next
 
         gpCurrentPlayer.Visible = False
         gpRoundCounter.Visible = False
@@ -69,5 +95,10 @@
         btnNext.Visible = False
 
         EnablePlayers(NUDPlayerCount.Value)
+    End Sub
+
+    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        ' Reset the dart throws on switching to the next player 
+        cntDartThrows = 1
     End Sub
 End Class
