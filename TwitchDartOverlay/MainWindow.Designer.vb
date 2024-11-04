@@ -135,7 +135,6 @@ Partial Class MainWindow
         RBTriple.Name = "RBTriple"
         RBTriple.Size = New Size(53, 19)
         RBTriple.TabIndex = 27
-        RBTriple.TabStop = True
         RBTriple.Text = "Triple"
         RBTriple.UseVisualStyleBackColor = True
         ' 
@@ -146,13 +145,13 @@ Partial Class MainWindow
         RBDouble.Name = "RBDouble"
         RBDouble.Size = New Size(63, 19)
         RBDouble.TabIndex = 26
-        RBDouble.TabStop = True
         RBDouble.Text = "Double"
         RBDouble.UseVisualStyleBackColor = True
         ' 
         ' RBSingle
         ' 
         RBSingle.AutoSize = True
+        RBSingle.Checked = True
         RBSingle.Location = New Point(6, 22)
         RBSingle.Name = "RBSingle"
         RBSingle.Size = New Size(57, 19)
@@ -578,7 +577,7 @@ Partial Class MainWindow
         ' 
         lblCurrentPlayer.AutoSize = True
         lblCurrentPlayer.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblCurrentPlayer.Location = New Point(6, 19)
+        lblCurrentPlayer.Location = New Point(22, 22)
         lblCurrentPlayer.Name = "lblCurrentPlayer"
         lblCurrentPlayer.Size = New Size(236, 37)
         lblCurrentPlayer.TabIndex = 9
@@ -705,11 +704,11 @@ Partial Class MainWindow
         ' 
         lblRoundCount.AutoSize = True
         lblRoundCount.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRoundCount.Location = New Point(6, 19)
+        lblRoundCount.Location = New Point(11, 22)
         lblRoundCount.Name = "lblRoundCount"
         lblRoundCount.Size = New Size(32, 37)
         lblRoundCount.TabIndex = 14
-        lblRoundCount.Text = "0"
+        lblRoundCount.Text = "1"
         ' 
         ' gpRoundCounter
         ' 
